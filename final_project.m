@@ -109,7 +109,7 @@ function visualizationselector_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-set(hObject, 'String', {'Average Income Comparison', 'Barrels Produced Comparison','Microbrewery Economic impact (2019)','Microbrewery Economic Impact vs Barrels Produced','Microbrewery Economic Impact vs Average Personal Income','Back To Map Mode'});
+set(hObject, 'String', {'Average Income', 'Barrels Produced','Microbrewery Economic impact (2019)','Microbrewery Economic Impact vs Barrels Produced','Microbrewery Economic Impact vs Average Personal Income','Back To Map Mode'});
 
 
 % --- Executes on button press in updatebutton.
@@ -147,13 +147,13 @@ switch popup_sel_index
         bar(W.EconomicImpact_2019_);
         hold on;
         title('Bar Graph of Economic Impact');
-        xlabel('Alphabetical States A->Z');
+        xlabel('States in Alphabetic Order');
         ylabel('Economic Impact (in mill. of dollars)');
         hold off;
     case 4
         scatter(W.EconomicImpact_2019_,W.BarrelsProduced_2019_);
         hold on;
-        title('Economic Impact vs Barrles Produced per state');
+        title('Economic Impact vs Barrels Produced per state');
         f = fit(W.EconomicImpact_2019_,W.BarrelsProduced_2019_,'poly1');
         plot(f,W.EconomicImpact_2019_,W.BarrelsProduced_2019_);
         xlabel('Economic Impact (in mill. of dollars)');
